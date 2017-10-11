@@ -3,38 +3,42 @@ var Queue = function() {
 
   // Use an object with numeric keys to store values
   var storage = {};
+  // counter variable
   var counter = 0;
   // Implement the methods below
 
   someInstance.enqueue = function(value) {
+    // increment up the counter
     counter += 1;
+    // adding to storage the key value pair of counter : value;
     storage[counter] = value;
-    console.log(storage);
   };
 
   someInstance.dequeue = function() {
-    var deletedItem = storage[1];
-    delete storage[1];
-    counter -= 1;
-    console.log('PRE K Rename = ', storage);
-    for (var k in storage) {
-      // k = k - 1;
-      var r = Number(k) - 1;
-      storage[r] = storage[k]; 
-      console.log('run');
+    if (counter > 0) {
+      // save storage value 1 as a temp variable in case needed
+      var recentlyRemoved = storage[1];
+      // removing storage value 1
+      delete storage[1];
+      for (var key in storage) {
+        // rekey keys to be k - 1 for the same data
+        var r = Number(key) - 1;
+        storage[r] = storage[key];
+        // delete currently incremented key
+        delete storage[key];
+      
+      }
+      //reduce counter
+      counter -= 1;
+      //return recently removed
+      return recentlyRemoved;
     }
-    console.log('POST K Rename =', storage);
-    return deletedItem;
-    
-    
   };
 
   someInstance.size = function() {
+    //return counter value
     return counter;
   };
 
   return someInstance;
 };
-
-
-

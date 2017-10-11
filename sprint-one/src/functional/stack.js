@@ -3,53 +3,35 @@ var Stack = function() {
 
   // Use an object with numeric keys to store values
   var storage = {};
-  var counter = 0;
-  
+  // create counter
+  var amazingCounter = 0;
+
   // Implement the methods below
   someInstance.push = function(value) {
-    counter += 1;
-    storage[counter] = value;
-    // console.log('COUNTER = ', counter);
-    // console.log(storage);
+    //increase counter
+    amazingCounter += 1;
+    //add the value to the storage object as a key value pair of counter : value
+    storage[amazingCounter] = value;
   };
 
   someInstance.pop = function() {
-    if (counter > 0) {
-      var holdAfterDeleted = storage[counter];
-      delete storage[counter];
-      // console.log(storage);
-      counter -= 1;
-      return holdAfterDeleted;
+    //check in case more removes than added
+    if (amazingCounter > 0) {
+      //save the last item as a temp variable
+      var recentlyRemoved = storage[amazingCounter];
+      //remove the item that is the last item in
+      delete storage[amazingCounter];
+      //reduce counter
+      amazingCounter -= 1;
+      //return temp variable
+      return recentlyRemoved;
     }
   };
 
   someInstance.size = function() {
-    return counter;
+    //return counter value
+    return amazingCounter;
   };
 
   return someInstance;
 };
-
-
-
-
-
-
-// var Stack = function() {
-//   var someInstance = {};
-
-//   // Use an object with numeric keys to store values
-//   var storage = {};
-
-//   // Implement the methods below
-//   someInstance.push = function(value) {
-//   };
-
-//   someInstance.pop = function() {
-//   };
-
-//   someInstance.size = function() {
-//   };
-
-//   return someInstance;
-// };
