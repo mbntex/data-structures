@@ -51,7 +51,10 @@ HashTable.prototype.remove = function(k) {
 
 
 /*
- * Complexity: What is the time complexity of the above functions?
+  insert = constant;
+  retrieve = constant;
+  remove = constant;
+  * noting that with collisions you do get some linear searches, but relative to the dataset they are small.
  */
 
 

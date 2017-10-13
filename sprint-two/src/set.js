@@ -20,5 +20,7 @@ setPrototype.remove = function(item) {
 };
 
 /*
- * Complexity: What is the time complexity of the above functions?
+  add = constant;
+  contains = constant; *researched and we are assuming that .hasOwnProperty does not require an iteration through the object keys of the set;
+  remove = constant;
  */

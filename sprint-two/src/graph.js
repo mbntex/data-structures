@@ -106,7 +106,12 @@ Graph.prototype.forEachNode = function(cb) {
 };
 
 /*
- * Complexity: What is the time complexity of the above functions?
+  addNode = constant; (because objects, which we use here for the graph are like hash tables :)  )
+  contains = linear, beacuse we are using sequential keys and iterating them, not a direct lookup based on key being the value which stops dupliucatee keys
+  removeNode = Quadratic, because we iterate the search as a loop and if there were a high number of edges the removal would be a nested loop. 
+  hasEdge = linear because we looped our search to check;
+  removeEdge = Quadratic, because we iterate the search as a loop and if there were a high number of edges the removal would be a nested loop.
+  forEachNode = linear;
  */
 
 

@@ -55,5 +55,7 @@ Binarymethods.depthFirstLog = function(cb) {
   }
 };
 /*
- * Complexity: What is the time complexity of the above functions?
+  insert = logarithmic;
+  contains = logarithmic;
+  depthFirstLog = linear;
  */

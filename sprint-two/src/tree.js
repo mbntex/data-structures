@@ -36,5 +36,8 @@ treeMethods.contains = function(target) {
 
 
 /*
- * Complexity: What is the time complexity of the above functions?
+addChild = constant, because with this implementation we have to be at the corect position in the tree to add the new varialbe.
+i.e. var tree = myTree.add(5);
+var treeBranch = tree.add(5);
+contains = linear;
  */
