@@ -26,6 +26,14 @@ Graph.prototype.contains = function(node) {
   return false;
 };
 
+Graph.prototype.deleteEdges = function() {
+  for (var key in this) {
+    if (!isNaN(key)) {
+      this[key].edges.length = 0;
+    }    
+  }
+};
+
 // Removes a node from the graph.
 Graph.prototype.removeNode = function(node) {
   for (var key in this) {

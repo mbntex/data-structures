@@ -4,15 +4,23 @@ var Tree = function(value) {
   newTree.children = [];  
   newTree.addChild = treeMethods.addChild;
   newTree.contains = treeMethods.contains;
+  newTree.size = treeMethods.size;
+  newTree.counter = 0;
   return newTree;
+  
 };
 
 var treeMethods = {};
 
 treeMethods.addChild = function(value) {
+  this.counter ++;
   var newNode = Tree(value);
   this.children.push(newNode);
   return newNode;
+};
+
+treeMethods.size = function() {
+  return this.counter;
 };
 
 treeMethods.contains = function(target) {

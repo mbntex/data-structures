@@ -23,5 +23,28 @@ describe('set', function() {
     set.remove('Mel Gibson');
     expect(set.contains('Mel Gibson')).to.equal(false);
   });
+  
+  it(' IT SHOULD ITERATE A SET WITH A CALLBACK function', function() {
+    var array = [];
+    var fn = function(item) { array.push(item.toUpperCase()); };
+    set.add('Mel Gibson');
+    set.add('Meredith Geebson');
+    set.add('Melon Grubson');
+    set.add('Melanie Gabson');
+    set.forEach(fn);
+    expect(array).to.eql(['MEL GIBSON', 'MEREDITH GEEBSON', 'MELON GRUBSON', 'MELANIE GABSON' ]);
+  });
 
 });
+
+
+
+// it('should execute a callback on every value in a tree using "depthFirstLog"', function() {
+//     var array = [];
+//     var func = function(value) { array.push(value); };
+//     binarySearchTree.insert(2);
+//     binarySearchTree.insert(3);
+//     binarySearchTree.insert(7);
+//     binarySearchTree.depthFirstLog(func);
+//     expect(array).to.eql([5, 2, 3, 7]);
+//   });

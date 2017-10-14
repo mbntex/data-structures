@@ -36,6 +36,13 @@ describe('linkedList', function() {
     expect(linkedList.removeHead()).to.equal(4);
   });
 
+  it('SHOULD RETURN LENGTH OF THE LINKEDLIST', function() {
+    linkedList.addToTail(4);
+    linkedList.addToTail(8);
+    linkedList.addToTail(1000456789856687);
+    expect(linkedList.lengthCheck()).to.equal(3);
+  });
+
   it('should contain a value that was added', function() {
     linkedList.addToTail(4);
     linkedList.addToTail(5);

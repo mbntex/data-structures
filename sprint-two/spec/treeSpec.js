@@ -21,6 +21,13 @@ describe('tree', function() {
     expect(tree.contains(5)).to.equal(true);
   });
 
+  it('SHOULD RETURN THE SIZE OF THE TREE', function() {
+    tree.addChild(5);
+    tree.addChild(15);
+    tree.addChild(51);
+    expect(tree.size()).to.equal(3);
+  });
+
   it('should return false for a value that was not added', function() {
     tree.addChild(5);
     expect(tree.contains(6)).to.equal(false);
