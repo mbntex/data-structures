@@ -1,16 +1,11 @@
 var BinarySearchTree = function(value) {
-  var obj = {};
-  obj.value = value; 
-  obj.left = null;
-  obj.right = null; 
-  obj.insert = Binarymethods.insert;
-  obj.contains = Binarymethods.contains;
-  obj.depthFirstLog = Binarymethods.depthFirstLog;
-  return obj;
+  this.value = value; 
+  this.left = null;
+  this.right = null; 
 };
 
-var Binarymethods = {};
-Binarymethods.insert = function(val) {
+
+BinarySearchTree.prototype.insert = function(val) {
   var currentNode = new BinarySearchTree(val);
   if (val >= this.value && this.right === null) {
     this.right = currentNode;
@@ -28,7 +23,7 @@ Binarymethods.insert = function(val) {
   }
 };
 
-Binarymethods.contains = function(target) {
+BinarySearchTree.prototype.contains = function(target) {
   var parseTree = function(node) {
     if (node.value === target) {
       return true;
@@ -43,7 +38,7 @@ Binarymethods.contains = function(target) {
   return parseTree(this) || false;
 };
 
-Binarymethods.depthFirstLog = function(cb) {
+BinarySearchTree.prototype.depthFirstLog = function(cb) {
   //cb on current
   cb(this.value);
   //check if left null
